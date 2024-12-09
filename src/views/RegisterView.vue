@@ -2,9 +2,11 @@
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 import { RouterLink, useRouter } from 'vue-router';
+import { useStore } from "../store";
 import { ref } from 'vue';
 
 const router = useRouter();
+const store = useStore();
 const password = ref('');
 const confirm = ref('')
 
@@ -25,13 +27,13 @@ const checkPasswords = () => {
         <h2>Create an Account</h2>
         <form @submit.prevent="checkPasswords">
           <div class="form-group">
-            <input type="text" placeholder="First Name" class="input-field" required>
+            <input v-model:="firstName" type="text" placeholder="First Name" class="input-field" required>
           </div>
           <div class="form-group">
-            <input type="text" placeholder="Last Name" class="input-field" required>
+            <input v-model:="lastName" type="text" placeholder="Last Name" class="input-field" required>
           </div>
           <div class="form-group">
-            <input type="email" placeholder="Email" class="input-field" required>
+            <input v-model:="email" type="email" placeholder="Email" class="input-field" required>
           </div>
           <div class="form-group">
             <input v-model:="password" type="password" placeholder="Password" class="input-field" required>
@@ -40,7 +42,9 @@ const checkPasswords = () => {
             <input v-model:="confirm" type="password" placeholder="Confirm Password" class="input-field" required>
           </div>
           <div class="form-group">
-            <button type="submit" class="button register">Register</button>
+            <button 
+            @click="store.account.set(route.params.id, { firstName: firstName, lastName: lastName, email: email, password: password })"
+            type="submit" class="button register">Register</button>
           </div>
         </form>
       </div>
