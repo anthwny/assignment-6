@@ -4,6 +4,8 @@ import LoginView from '../views/LoginView.vue';
 import RegisterView from '../views/RegisterView.vue';
 import MoviesView from '../views/MoviesView.vue';
 import DetailView from '../views/DetailView.vue';
+import CartView from '../views/CartView.vue';
+import SettingsView from '../views/SettingsView.vue';
 
 const routes = [
     { path: '/', component: HomeView },
