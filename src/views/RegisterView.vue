@@ -7,13 +7,24 @@ import { ref } from 'vue';
 
 const router = useRouter();
 const store = useStore();
+const firstName = ref('');
+const lastName = ref('');
+const email = ref('');
 const password = ref('');
-const confirm = ref('')
+const confirm = ref('');
 
 const checkPasswords = () => {
   if (password.value === confirm.value) {
+    store.addAccount(email.value, {
+      firstName: firstName.value,
+      lastName: lastName.value,
+      email: email.value,
+      password: password.value
+    });
+    console.log(store.accounts);
     router.push("/movies");
-  } else {
+  } 
+  else {
     alert("Your passwords do not match");
   }
 };
@@ -42,9 +53,7 @@ const checkPasswords = () => {
             <input v-model:="confirm" type="password" placeholder="Confirm Password" class="input-field" required>
           </div>
           <div class="form-group">
-            <button 
-            @click="store.account.set(route.params.id, { firstName: firstName, lastName: lastName, email: email, password: password })"
-            type="submit" class="button register">Register</button>
+            <button type="submit" class="button register">Register</button>
           </div>
         </form>
       </div>

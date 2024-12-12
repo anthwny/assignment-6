@@ -11,6 +11,8 @@ const routes = [
     { path: '/login', component: LoginView },
     { path: '/movies', component: MoviesView },
     { path: '/movies/:id', component: DetailView },
+    { path: '/cart', component: CartView },
+    { path: '/settings', component: SettingsView },
 ]
 
 const router = createRouter({
