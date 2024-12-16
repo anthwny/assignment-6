@@ -21,7 +21,6 @@ const checkPasswords = () => {
       email: email.value,
       password: password.value
     });
-    console.log(store.accounts);
     store.currentUserEmail = email.value
     router.push("/movies");
   } 

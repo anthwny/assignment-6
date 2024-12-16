@@ -4,7 +4,6 @@ import { useRoute } from "vue-router";
 
 const route = useRoute();
 const response = await axios.get(`https://api.themoviedb.org/3/movie/${route.params.id}?api_key=${import.meta.env.VITE_TMDB_KEY}&append_to_response=videos`);
-console.log(response.data);
 </script>
 
 <template>
