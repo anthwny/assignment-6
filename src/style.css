@@ -4,6 +4,10 @@ body {
   text-align: center;
 }
 
+h5 {
+  color: #69d8ff
+}
+
 .topnav {
   background-color: #222;
   overflow: hidden;

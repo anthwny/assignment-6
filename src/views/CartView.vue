@@ -20,38 +20,63 @@ const store = useStore();
 </template>
 
 <style scoped>
-h1 {
-    color: #e50914;
-    text-align: center;
-}
-
-button {
-    display: inline-block;
-    margin-bottom: 20px;
-    padding: 10px 15px;
-    background-color: #e50914;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
 .cart {
-    display: flex;
-    flex-direction: column;
-    background-color: #141414;
-    gap: 2rem;
-    height: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  gap: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #69d8ff;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .item {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #222;
+  padding: 15px;
+  border-radius: 10px;
+  width: 80%;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
 }
 
-img {
-    width: 10%;
-    border-radius: 5%;
+.item:hover {
+  transform: scale(1.05);
+  background-color: #111;
+}
+
+.item img {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.item h1 {
+  font-size: 1.2rem;
+  color: #fff;
+  flex-grow: 1;
+  padding: 0 15px;
+}
+
+button {
+  background-color: #69d8ff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #428eaa;
 }
 </style>
 
