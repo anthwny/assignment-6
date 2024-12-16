@@ -50,7 +50,7 @@ function saveChanges() {
         </div>
         <div>
           <h4>Email</h4>
-          <input v-model="email" type="email" placeholder="Email" class="input-field" disabled />
+          <input v-model="email" type="email" placeholder="Email" class="input-field-email" disabled />
         </div>
         <button class="btn btn-primary" @click="saveChanges">Save Changes</button>
       </div>
@@ -81,6 +81,16 @@ function saveChanges() {
   border: 1px solid #ccc;
   margin-bottom: 15px;
   transition: border-color 0.3s;
+}
+
+.input-field-email {
+  padding: 15px;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  transition: border-color 0.3s;
+  color:#ccc
 }
 
 .input-field:focus {
